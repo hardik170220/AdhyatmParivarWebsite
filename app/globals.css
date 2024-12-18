@@ -2,32 +2,61 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+@layer utilities {
+
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 8px; 
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: #fff; 
+    border-radius: 8px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background:#DFDFDF; 
+    border-radius: 8px;
+  }
+
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.custom-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  background: #d4af37; 
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.custom-range::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  background: #d4af37; 
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.custom-range::-ms-thumb {
+  width: 16px;
+  height: 16px;
+  background: #D97706;
+  border-radius: 50%;
+  cursor: pointer;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  scroll-snap-type: y mandatory; /* Enable vertical scroll snapping */
+  overflow-y: scroll; /* Enable vertical scrolling */
+  height: 100vh; /* Full viewport height for body */
+  margin: 0; /* Remove default margin */
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+
+body, html {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  /* overflow: hidden;  */
 }
