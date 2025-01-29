@@ -51,7 +51,7 @@ const SidebarItem = ({
     <div>
       <div
         onClick={() => setIsOpen(!isOpen)}
-        className="flex font-notoGujarati tracking-wide items-center cursor-pointer p-1 px-5"
+        className="flex font-Teko tracking-wide items-center cursor-pointer p-1 px-5"
       >
         {!standAlone && (
           <span className="text-gray-500 mr-2">
@@ -84,7 +84,7 @@ const SidebarItem = ({
                 subItems.map((subItem, index) => (
                   <Link href={generateLink(subItem)} key={index}>
                     <div
-                      className={`text-sm font-notoGujarati tracking-wide p-1 pl-8 block text-gray-600 cursor-pointer mb-1 
+                      className={`text-sm font-Teko tracking-wide p-1 pl-8 block text-gray-600 cursor-pointer mb-1 
                         ${
                           isActiveLink(subItem)
                             ? "bg-gray-200 text-gray-800"

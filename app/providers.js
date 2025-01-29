@@ -4,13 +4,20 @@ import Main from "./main";
 import Header from "./layouts/Header";
 import { GlobalProvider } from "./context/GlobalContext";
 
-const Providers = ({ children }) => {
+const Providers = ({ children,departmentID,departmentDataIDWise,serviceID,services,service,serviceDetails,departmentName }) => {
   // console.log(languageWiseSections, "languageWiseSections.........");
 
   return (
     <div className="container flex mx-auto">
-      <GlobalProvider>
-       
+      <GlobalProvider
+      departmentID={departmentID}
+      departmentDataIDWise={departmentDataIDWise}
+      serviceID={serviceID}
+      services={services}
+      service={service}
+      serviceDetails={serviceDetails}
+      departmentName={departmentName}
+      >
           <Header className="fixed top-0 left-0 lg:left-0 right-0 z-10" />
           <div className="flex pt-8 flex-grow">
             <Sidebar

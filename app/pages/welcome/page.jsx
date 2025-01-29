@@ -14,6 +14,7 @@ import Providers from "@/app/providers";
 // gsap.registerPlugin(ScrollTrigger);
 
 export default function Home() {
+  
   // const secRef = useRef();
 
   // useGSAP(() => {
@@ -35,6 +36,8 @@ export default function Home() {
   // });
 
   return (
+
+    
     <div className=" ">
       <Providers>
       <Hero/>

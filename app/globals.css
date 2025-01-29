@@ -46,12 +46,27 @@
   cursor: pointer;
 }
 
-body {
-  scroll-snap-type: y mandatory; /* Enable vertical scroll snapping */
-  overflow-y: scroll; /* Enable vertical scrolling */
-  height: 100vh; /* Full viewport height for body */
-  margin: 0; /* Remove default margin */
+/* add blur fade effect on content */
+.arrow {
+  animation: shiftLeftAndBack 1s ease-in-out infinite;
 }
+
+
+@keyframes shiftLeftAndBack {
+  0% {
+    transform: translateX(0);  /* Start at the original position */
+  }
+  50% {
+    transform: translateX(10px); /* Move 10px to the left */
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0); /* Return to the original position */
+    opacity: 0;
+  }
+}
+
+
 
 
 body, html {
