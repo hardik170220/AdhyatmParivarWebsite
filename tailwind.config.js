@@ -5,6 +5,7 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  
   theme: {
     extend: {
       backgroundImage: {
@@ -22,6 +23,7 @@ module.exports = {
     fontFamily: {
 
       Teko : [ "Teko", 'sans-serif'],
+      Anek : [ "Anek Gujarati", 'serif'],
       Karma: ["Karma",'sans-serif'],
       NotoSansHindi: ["Noto Sans Devanagari",'sans-serif'],
       notoGujarati : ["Anek Gujarati", 'sans-serif']
@@ -30,4 +32,9 @@ module.exports = {
     },
   },
   plugins: [],
+  // safelist: [
+  //   {
+  //     pattern: /.*/
+  //   }
+  // ]
 };

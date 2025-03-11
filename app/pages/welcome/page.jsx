@@ -6,15 +6,13 @@ import "../../globals.css";
 // import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Departments from "../../_components/Departments";
 import LogoDescription from "../../_components/LogoDescription";
-import IndexItems from "../../_components/IndexItems";
 import Hero from "../../_components/Hero";
-import Sidebar from "@/app/layouts/Sidebar";
 import Providers from "@/app/providers";
+import { AnimatedGridPattern } from "@/app/_components/magicui/animated-grid-pattern";
 
 // gsap.registerPlugin(ScrollTrigger);
 
 export default function Home() {
-  
   // const secRef = useRef();
 
   // useGSAP(() => {
@@ -36,13 +34,12 @@ export default function Home() {
   // });
 
   return (
-
-    
-    <div className=" ">
+    <div>
       <Providers>
-      <Hero/>
-      <LogoDescription />
-]      <Departments />
+        <AnimatedGridPattern />
+        <Hero />
+        <LogoDescription />
+        <Departments />
       </Providers>
     </div>
   );

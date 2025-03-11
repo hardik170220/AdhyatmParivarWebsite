@@ -66,6 +66,11 @@
   }
 }
 
+.ant-form-item-label > label {
+  font-family: "Anek Gujarati", serif !important;
+}
+
+
 
 
 

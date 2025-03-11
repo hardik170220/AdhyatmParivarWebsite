@@ -41,7 +41,7 @@ const Header = ({ className }) => {
 
     return (
         <>
-            <header className={`font-notoSans text-gray-500 z-20 shadow-lg  md:w-full sm:w-full border-gray-500 bg-white ${className}`}>
+            <header className={`font-notoSans text-gray-500 z-50 shadow-lg  md:w-full sm:w-full border-gray-500 bg-white ${className}`}>
                 <div className="container mx-auto flex flex-wrap px-5 py-4 items-center justify-between">
                     <div className="flex items-center justify-between w-full md:w-1/3">
                         <div
