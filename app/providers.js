@@ -21,7 +21,7 @@ const Providers = ({ children,departmentID,departmentDataIDWise,serviceID,servic
           <Header className="fixed top-0 left-0 lg:left-0 right-0 z-10" />
           <div className="flex pt-8 flex-grow">
             <Sidebar
-              className={`hidden lg:block fixed top-16 bottom-0 z-10 `}
+              className={`hidden lg:block fixed top-16 bottom-0 z-10`}
             />
             <Main>{children}</Main>
           </div>

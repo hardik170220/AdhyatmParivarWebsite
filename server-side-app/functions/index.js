@@ -101,6 +101,46 @@ exports.mahabharatForm = onRequest(async (req, res) => {
     });
 });
 
+exports.udayanmantriForm = onRequest(async (req, res) => {
+    cors(req, res, async () => {
+        logger.info("Hello udayanmantriForm!", { structuredData: true });
+
+        try {
+            const data = req.body;
+            const { नाम } = req.body;
+            const { ['मोबाइल नंबर']: mobile } = req.body;
+
+            // Check if a document with the same mobile number already exists
+            const existingDoc = await getFirestore()
+                .collection('udayanmantri-bookorder')
+                .doc(`${mobile}`)
+                .get();
+
+            if (existingDoc.exists) {
+                return res.status(400).json({
+                    message: "you have already register for your Order.",
+                });
+            }
+
+            // If no existing document, save the new record
+            await getFirestore().collection('udayanmantri-bookorder').doc(`${mobile}`).set({
+                ...data,
+                timestamp: Date.now()
+            });
+
+            return res.status(200).json({
+                message: "udayanmantriForm submitted successfully!",
+            });
+        } catch (error) {
+            console.error(error);
+            return res.status(500).json({
+                message: "An error occurred while processing your request.",
+                error: error.message 
+            });
+        }
+    });
+});
+
 
 exports.getAllMahabharatBookOrderData = onRequest(async (req, res) => {
   cors(req, res, async () => {
@@ -126,6 +166,30 @@ exports.getAllMahabharatBookOrderData = onRequest(async (req, res) => {
   });
 });
 
+
+exports.getAllUdayanmantriBookOrderData = onRequest(async (req, res) => {
+    cors(req, res, async () => {
+      const firestore = getFirestore();
+  
+      try {
+        const totalRecordsSnapshot = await firestore.collection("udayanmantri-bookorder").get();
+        const totalRecords = totalRecordsSnapshot.size;
+        const allRecords = totalRecordsSnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+  
+        return res.status(200).json({
+          message: "Fetched total registered count and all records successfully!",
+          totalRecords,
+          allRecords
+        });
+      } catch (error) {
+        console.error("Error fetching total registered count: ", error);
+        return res.status(500).json({
+          message: "An error occurred while fetching the total registered count.",
+          error: error.message,
+        });
+      }
+    });
+  });
 
 
 

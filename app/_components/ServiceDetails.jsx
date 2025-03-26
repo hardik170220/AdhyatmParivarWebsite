@@ -109,11 +109,20 @@
 // export default ServiceDetails;
 
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import { BiChevronRight } from "react-icons/bi";
 import { useGlobalProvider } from "../context/GlobalContext";
 
 const ServiceDetails = () => {
+  
+  useEffect(() => {
+    // Check if the page has already been reloaded in this session
+    if (!sessionStorage.getItem("reloaded")) {
+      sessionStorage.setItem("reloaded", "true");
+      window.location.reload();
+    }
+  }, []);
+  
   const { serviceDetails, departmentName, service } = useGlobalProvider();
 
   return (

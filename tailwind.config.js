@@ -17,7 +17,8 @@ module.exports = {
         purple:"#f5f5f5",
         greenish:'#26A95E',
         golden:"#d4af37",
-        lightPurple:"#fff",        
+        lightPurple:"#fff", 
+        brown: "#6B4226",       
       },
     },
     fontFamily: {
@@ -34,7 +35,7 @@ module.exports = {
   plugins: [],
   // safelist: [
   //   {
-  //     pattern: /.*/
+  //     // pattern: /.*/
   //   }
   // ]
 };
