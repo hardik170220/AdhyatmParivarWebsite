@@ -147,7 +147,7 @@ exports.getAllMahabharatBookOrderData = onRequest(async (req, res) => {
     const firestore = getFirestore();
 
     try {
-      const totalRecordsSnapshot = await firestore.collection("mahabharat-bookorder").get();
+      const totalRecordsSnapshot = await firestore.collection("mahabharat-bookorder").orderBy("timestamp", "desc").get();
       const totalRecords = totalRecordsSnapshot.size;
       const allRecords = totalRecordsSnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
 
@@ -172,7 +172,7 @@ exports.getAllUdayanmantriBookOrderData = onRequest(async (req, res) => {
       const firestore = getFirestore();
   
       try {
-        const totalRecordsSnapshot = await firestore.collection("udayanmantri-bookorder").get();
+        const totalRecordsSnapshot = await firestore.collection("udayanmantri-bookorder").orderBy("timestamp", "desc").get();
         const totalRecords = totalRecordsSnapshot.size;
         const allRecords = totalRecordsSnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
   

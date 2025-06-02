@@ -19,6 +19,7 @@
     "firebase-functions": "^5.1.0",
     "gsap": "^3.12.5",
     "html-react-parser": "^5.2.2",
+    "mhah-panchang": "^1.2.0",
     "motion": "^12.4.10",
     "next": "14.2.5",
     "react": "^18",

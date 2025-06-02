@@ -7,6 +7,8 @@ import "../../globals.css";
 import Departments from "../../_components/Departments";
 import LogoDescription from "../../_components/LogoDescription";
 import Hero from "../../_components/Hero";
+import FrontPage from "../../_components/frontpage";
+import LetterPage from "../../_components/letter";
 import Providers from "@/app/providers";
 import { AnimatedGridPattern } from "@/app/_components/magicui/animated-grid-pattern";
 
@@ -38,8 +40,10 @@ export default function Home() {
       <Providers>
         <AnimatedGridPattern />
         <Hero />
+        {/* <FrontPage/> */}
         <LogoDescription />
         <Departments />
+        <LetterPage />
       </Providers>
     </div>
   );

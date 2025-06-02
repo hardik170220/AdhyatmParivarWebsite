@@ -1,5 +1,3 @@
-
-
 "use client";
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
@@ -57,7 +55,7 @@ const Header = ({ className }) => {
                             <span className="text-sm tracking-widest uppercase text-gray-800"><b>Adhyatm&nbsp;&nbsp;&nbsp;Parivar</b></span>
                         </Link>
                     </div>
-                    <div className="relative mt-4 md:mt-0 w-full md:w-1/3 flex justify-end order-3 md:order-3">
+                    <div className="relative hidden mt-4 md:mt-0 w-full md:w-1/3 md:flex justify-end order-3 md:order-3">
                         <input
                             type="text"
                             placeholder="Search..."

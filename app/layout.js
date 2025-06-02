@@ -37,6 +37,8 @@
 // }
 
 import "./globals.css";
+import GoogleAnalytics from "./_components/googleAnalytics/GoogleAnalytics";
+import GoogleTrack from "./_components//googleAnalytics/GoogleTrack";
 
 export const metadata = {
   title: "Adhyatm Parivar",
@@ -86,6 +88,8 @@ export default function RootLayout({ children }) {
           rel="stylesheet"
         />
         <link href="https://fonts.googleapis.com/css2?family=Anek+Gujarati:wght@100..800&display=swap" rel="stylesheet"/>
+        <GoogleAnalytics/>
+        <GoogleTrack/>
       </head>
 
       <body className="relative overflow-x-hidden bg-white flex flex-col items-center min-h-screen">
