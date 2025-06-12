@@ -23,7 +23,7 @@ module.exports = {
     },
     fontFamily: {
 
-      Teko : [ "Teko", 'sans-serif'],
+      Teko : [ "Anek Devanagari", 'sans-serif'],
       Anek : [ "Anek Gujarati", 'serif'],
       Karma: ["Karma",'sans-serif'],
       NotoSansHindi: ["Noto Sans Devanagari",'sans-serif'],

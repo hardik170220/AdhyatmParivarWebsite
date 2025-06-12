@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { Form, Collapse, Checkbox, Radio, Input, Button, message } from "antd";
+import { FaSpinner } from "react-icons/fa";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
 const { Panel } = Collapse;
@@ -163,23 +164,10 @@ const Page = ({ formData, updateFormData, nextStep, prevStep }) => {
       
       form.setFieldsValue(formValues);
       
-      // Set isDailyChecked based on formData - handle both formats
-      let dailyChecked = false;
-      if (formData.selectedServices && formData.timeAvailability) {
-        // Structured format
-        dailyChecked = formData.timeAvailability.daily || false;
-      } else if (formValues.timeAvailability && Array.isArray(formValues.timeAvailability)) {
-        // Form format
-        dailyChecked = formValues.timeAvailability.includes("daily");
+      // Set isDailyChecked based on formData
+      if (formValues.timeAvailability && formValues.timeAvailability.includes("daily")) {
+        setIsDailyChecked(true);
       }
-      setIsDailyChecked(dailyChecked);
-
-      // Trigger validation for service selection after form is populated
-      setTimeout(() => {
-        form.validateFields(['serviceSelection']).catch(() => {
-          // Ignore validation errors, just trigger the validation
-        });
-      }, 100);
     }
   }, [formData, form]);
 
@@ -224,18 +212,8 @@ const Page = ({ formData, updateFormData, nextStep, prevStep }) => {
     }
   };
 
-  // Extract daily checkbox value from timeAvailability - handle both formats
-  const isDailySelected = (() => {
-    if (!formData) return false;
-    if (formData.selectedServices && formData.timeAvailability) {
-      // Structured format
-      return formData.timeAvailability.daily || false;
-    } else if (formData.timeAvailability && Array.isArray(formData.timeAvailability)) {
-      // Form format
-      return formData.timeAvailability.includes("daily");
-    }
-    return false;
-  })();
+  // Extract daily checkbox value from timeAvailability array
+  const isDailySelected = formData?.timeAvailability?.includes("daily") || false;
 
   return (
     <div className="relative w-full flex-col font-Karma flex justify-center">
@@ -273,7 +251,7 @@ const Page = ({ formData, updateFormData, nextStep, prevStep }) => {
                     );
                     return selected
                       ? Promise.resolve()
-                      : Promise.reject(new Error("कृपया कम से कम एक सेवा का चयन करें"));
+                      : Promise.reject("कृपया कम से कम एक सेवा का चयन करें");
                   },
                 },
               ]}
@@ -288,16 +266,7 @@ const Page = ({ formData, updateFormData, nextStep, prevStep }) => {
                       name={`department_${department.departmentID}`}
                       noStyle
                     >
-                      <CheckboxGroup
-                        onChange={() => {
-                          // Trigger validation when any service selection changes
-                          setTimeout(() => {
-                            form.validateFields(['serviceSelection']).catch(() => {
-                              // Ignore validation errors, just trigger the validation
-                            });
-                          }, 0);
-                        }}
-                      >
+                      <CheckboxGroup>
                         <div className="flex flex-col space-y-2">
                           {department.services.map((service) => (
                             <Checkbox

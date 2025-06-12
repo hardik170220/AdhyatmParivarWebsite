@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { Form, Collapse, Checkbox, Radio, Input, Button, message } from "antd";
+import { FaSpinner } from "react-icons/fa";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
 const { Panel } = Collapse;
@@ -79,113 +80,19 @@ const Page = ({ formData, updateFormData, nextStep, prevStep }) => {
     (dept) => `department_${dept.departmentID}`
   );
 
-  // Function to convert form data to structured format
-  const convertToStructuredData = (formValues) => {
-    const selectedServices = [];
-    
-    // Extract selected services from department fields
-    departments.forEach(department => {
-      const departmentKey = `department_${department.departmentID}`;
-      const selectedServiceIds = formValues[departmentKey] || [];
-      
-      selectedServiceIds.forEach(serviceId => {
-        const service = department.services.find(s => s.serviceID === serviceId);
-        if (service) {
-          selectedServices.push({
-            departmentID: department.departmentID,
-            departmentName: department.name,
-            serviceID: service.serviceID,
-            serviceName: service.name
-          });
-        }
-      });
-    });
-
-    // Structure the final data object
-    const structuredData = {
-      selectedServices: selectedServices,
-      timeAvailability: {
-        daily: formValues.timeAvailability?.includes('daily') || false,
-        dailyHours: formValues.dailyHours || null,
-        holidayTimeAvailability: formValues.holidayTimeAvailability || null
-      },
-      workTravelInterest: formValues.workTravelInterest || null
-    };
-
-    return structuredData;
-  };
-
-  // Function to convert structured data back to form format (for initialization)
-  const convertFromStructuredData = (structuredData) => {
-    if (!structuredData || !structuredData.selectedServices) {
-      return {};
-    }
-
-    const formData = {};
-    
-    // Initialize department fields
-    departments.forEach(dept => {
-      formData[`department_${dept.departmentID}`] = [];
-    });
-
-    // Populate department fields from selectedServices
-    structuredData.selectedServices.forEach(service => {
-      const departmentKey = `department_${service.departmentID}`;
-      if (!formData[departmentKey]) {
-        formData[departmentKey] = [];
-      }
-      formData[departmentKey].push(service.serviceID);
-    });
-
-    // Set time availability data
-    const timeAvailability = [];
-    if (structuredData.timeAvailability?.daily) {
-      timeAvailability.push('daily');
-    }
-    
-    formData.timeAvailability = timeAvailability;
-    formData.dailyHours = structuredData.timeAvailability?.dailyHours;
-    formData.holidayTimeAvailability = structuredData.timeAvailability?.holidayTimeAvailability;
-    formData.workTravelInterest = structuredData.workTravelInterest;
-
-    return formData;
-  };
-
   useEffect(() => {
     if (formData) {
-      // If formData is in structured format, convert it to form format
-      let formValues;
-      if (formData.selectedServices) {
-        formValues = convertFromStructuredData(formData);
-      } else {
-        formValues = formData;
-      }
+      form.setFieldsValue(formData);
       
-      form.setFieldsValue(formValues);
-      
-      // Set isDailyChecked based on formData - handle both formats
-      let dailyChecked = false;
-      if (formData.selectedServices && formData.timeAvailability) {
-        // Structured format
-        dailyChecked = formData.timeAvailability.daily || false;
-      } else if (formValues.timeAvailability && Array.isArray(formValues.timeAvailability)) {
-        // Form format
-        dailyChecked = formValues.timeAvailability.includes("daily");
+      // Set isDailyChecked based on formData
+      if (formData.timeAvailability && formData.timeAvailability.includes("daily")) {
+        setIsDailyChecked(true);
       }
-      setIsDailyChecked(dailyChecked);
-
-      // Trigger validation for service selection after form is populated
-      setTimeout(() => {
-        form.validateFields(['serviceSelection']).catch(() => {
-          // Ignore validation errors, just trigger the validation
-        });
-      }, 100);
     }
   }, [formData, form]);
 
   const handleSubmit = (values) => {
-    const structuredData = convertToStructuredData(values);
-    console.log("Structured Form Data:", structuredData);
+    console.log("Form Values:", values);
     messageApi.success("फॉर्म सफलतापूर्वक जमा किया गया!");
   };
 
@@ -193,10 +100,7 @@ const Page = ({ formData, updateFormData, nextStep, prevStep }) => {
     try {
       await form.validateFields();
       const values = form.getFieldsValue();
-      const structuredData = convertToStructuredData(values);
-      
-      console.log("Structured Data being sent:", structuredData);
-      updateFormData(structuredData);
+      updateFormData(values);
       nextStep();
     } catch (errorInfo) {
       messageApi.error("कृपया सभी आवश्यक फ़ील्ड भरें!");
@@ -224,18 +128,8 @@ const Page = ({ formData, updateFormData, nextStep, prevStep }) => {
     }
   };
 
-  // Extract daily checkbox value from timeAvailability - handle both formats
-  const isDailySelected = (() => {
-    if (!formData) return false;
-    if (formData.selectedServices && formData.timeAvailability) {
-      // Structured format
-      return formData.timeAvailability.daily || false;
-    } else if (formData.timeAvailability && Array.isArray(formData.timeAvailability)) {
-      // Form format
-      return formData.timeAvailability.includes("daily");
-    }
-    return false;
-  })();
+  // Extract daily checkbox value from timeAvailability array
+  const isDailySelected = formData?.timeAvailability?.includes("daily") || false;
 
   return (
     <div className="relative w-full flex-col font-Karma flex justify-center">
@@ -273,7 +167,7 @@ const Page = ({ formData, updateFormData, nextStep, prevStep }) => {
                     );
                     return selected
                       ? Promise.resolve()
-                      : Promise.reject(new Error("कृपया कम से कम एक सेवा का चयन करें"));
+                      : Promise.reject("कृपया कम से कम एक सेवा का चयन करें");
                   },
                 },
               ]}
@@ -288,16 +182,7 @@ const Page = ({ formData, updateFormData, nextStep, prevStep }) => {
                       name={`department_${department.departmentID}`}
                       noStyle
                     >
-                      <CheckboxGroup
-                        onChange={() => {
-                          // Trigger validation when any service selection changes
-                          setTimeout(() => {
-                            form.validateFields(['serviceSelection']).catch(() => {
-                              // Ignore validation errors, just trigger the validation
-                            });
-                          }, 0);
-                        }}
-                      >
+                      <CheckboxGroup>
                         <div className="flex flex-col space-y-2">
                           {department.services.map((service) => (
                             <Checkbox
@@ -368,9 +253,7 @@ const Page = ({ formData, updateFormData, nextStep, prevStep }) => {
             <div className="flex mt-8 justify-between items-center">
               <button
                 onClick={() => {
-                  const values = form.getFieldsValue();
-                  const structuredData = convertToStructuredData(values);
-                  updateFormData(structuredData);
+                  updateFormData(form.getFieldsValue());
                   prevStep();
                 }}
                 className="flex items-center px-4 py-2 rounded-sm bg-blue-50 border-blue-200 border-2 text-gray-800 font-medium hover:bg-blue-100 shadow-md hover:shadow-lg transition-all duration-300"

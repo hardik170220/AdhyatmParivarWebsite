@@ -58,7 +58,7 @@ const SidebarItem = ({
             {isOpen ? <FaChevronDown /> : <FaChevronRight />}
           </span>
         )}
-        <div className={`text-gray-600 font-semibold flex-1`}>
+        <div className={`text-gray-700 font-semibold flex-1`}>
           {standAlone || !subItems ? (
             <Link href={`/pages/${url}`} className="block ml-5">
               <span>&nbsp;&nbsp;{title}</span>
@@ -84,10 +84,10 @@ const SidebarItem = ({
                 subItems.map((subItem, index) => (
                   <Link href={generateLink(subItem)} key={index}>
                     <div
-                      className={`text-sm font-Teko tracking-wide p-1 pl-8 block text-gray-600 cursor-pointer mb-1 
+                      className={`text-[0.8rem] font-Teko tracking-wide p-1 pl-8 block text-gray-700 cursor-pointer mb-1 
                         ${
                           isActiveLink(subItem)
-                            ? "bg-gray-200 text-gray-800"
+                            ? "bg-gray-200 border border-gray-300 text-gray-800"
                             : "hover:bg-gray-200 hover:text-gray-800"
                         }`}
                     >

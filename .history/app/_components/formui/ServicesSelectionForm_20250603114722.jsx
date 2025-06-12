@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { Form, Collapse, Checkbox, Radio, Input, Button, message } from "antd";
+import { FaSpinner } from "react-icons/fa";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
 const { Panel } = Collapse;

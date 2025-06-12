@@ -7,7 +7,7 @@ const Main = ({ children }) => {
   return (
     <div>
       <main
-        className={`flex-1 mt-40 md:mt-10 transition-all duration-500 ease-in-out ${isSidebarHide ? 'lg:ml-0' : 'lg:ml-64'}`}
+        className={`flex-1 mt-28 md:mt-10 transition-all duration-500 ease-in-out ${isSidebarHide ? 'lg:ml-0' : 'lg:ml-64'}`}
         style={{ transitionProperty: 'margin-left' }}
       >
         {children}

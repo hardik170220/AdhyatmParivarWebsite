@@ -88,6 +88,7 @@ export default function RootLayout({ children }) {
           rel="stylesheet"
         />
         <link href="https://fonts.googleapis.com/css2?family=Anek+Gujarati:wght@100..800&display=swap" rel="stylesheet"/>
+        <link href="https://fonts.googleapis.com/css2?family=Anek+Devanagari:wght@100..800&display=swap" rel="stylesheet"></link>
         <GoogleAnalytics/>
         <GoogleTrack/>
       </head>

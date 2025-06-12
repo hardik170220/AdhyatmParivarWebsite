@@ -284,7 +284,7 @@ const Sidebar = ({ className }) => {
   return (
     <div
       style={{ transitionProperty: 'width' }}
-      className={`main-sidebar ${isSidebarHide ? 'lg:w-0' : 'lg:w-64'} transition-width bg-white duration-500 ease-in-out h-[calc(100vh-65px)] pb-6 pt-40 sm:pt-11 text-white shadow-[rgba(0,0,15,0.1)_1px_0px_0px_0px] overflow-y-scroll custom-scrollbar border-gray-500 ${className}`}
+      className={`main-sidebar ${isSidebarHide ? 'lg:w-0' : 'lg:w-64'} transition-width bg-white duration-500 ease-in-out h-[calc(100vh-65px)] pb-6 pt-28 sm:pt-11 text-white shadow-[rgba(0,0,15,0.1)_1px_0px_0px_0px] overflow-y-scroll custom-scrollbar border-gray-500 ${className}`}
     >
       {loading ? (
         <div>Loading...</div>

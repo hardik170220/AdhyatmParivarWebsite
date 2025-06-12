@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { Form, Collapse, Checkbox, Radio, Input, Button, message } from "antd";
+import { FaSpinner } from "react-icons/fa";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
 const { Panel } = Collapse;
@@ -173,13 +174,6 @@ const Page = ({ formData, updateFormData, nextStep, prevStep }) => {
         dailyChecked = formValues.timeAvailability.includes("daily");
       }
       setIsDailyChecked(dailyChecked);
-
-      // Trigger validation for service selection after form is populated
-      setTimeout(() => {
-        form.validateFields(['serviceSelection']).catch(() => {
-          // Ignore validation errors, just trigger the validation
-        });
-      }, 100);
     }
   }, [formData, form]);
 
@@ -273,7 +267,7 @@ const Page = ({ formData, updateFormData, nextStep, prevStep }) => {
                     );
                     return selected
                       ? Promise.resolve()
-                      : Promise.reject(new Error("कृपया कम से कम एक सेवा का चयन करें"));
+                      : Promise.reject("कृपया कम से कम एक सेवा का चयन करें");
                   },
                 },
               ]}
@@ -288,16 +282,7 @@ const Page = ({ formData, updateFormData, nextStep, prevStep }) => {
                       name={`department_${department.departmentID}`}
                       noStyle
                     >
-                      <CheckboxGroup
-                        onChange={() => {
-                          // Trigger validation when any service selection changes
-                          setTimeout(() => {
-                            form.validateFields(['serviceSelection']).catch(() => {
-                              // Ignore validation errors, just trigger the validation
-                            });
-                          }, 0);
-                        }}
-                      >
+                      <CheckboxGroup>
                         <div className="flex flex-col space-y-2">
                           {department.services.map((service) => (
                             <Checkbox
