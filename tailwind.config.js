@@ -2,7 +2,7 @@
 module.exports = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./_components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   
@@ -24,6 +24,7 @@ module.exports = {
     fontFamily: {
 
       Teko : [ "Anek Devanagari", 'sans-serif'],
+      Roboto : [ "Roboto", 'sans-serif'],
       Anek : [ "Anek Gujarati", 'serif'],
       Karma: ["Karma",'sans-serif'],
       NotoSansHindi: ["Noto Sans Devanagari",'sans-serif'],
@@ -32,10 +33,12 @@ module.exports = {
       
     },
   },
-  plugins: [],
+   plugins: [
+    // require('@tailwindcss/typography'),
+  ],
   // safelist: [
   //   {
-  //     // pattern: /.*/
+  //     pattern: /.*/
   //   }
   // ]
 };

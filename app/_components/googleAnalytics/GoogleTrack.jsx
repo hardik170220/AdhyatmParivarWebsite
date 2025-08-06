@@ -6,7 +6,7 @@ const GoogleTrack = () => {
     <>
       <Script
         strategy="afterInteractive"
-        src={`https://www.googletagmanager.com/gtag/js?id=G-9F7R7RSGX9`}
+        src={`https://www.googletagmanager.com/gtag/js?id=G-SD1C7FRNHK`}
       />
       <Script id="google-tag-manager" strategy="afterInteractive">
         {`
@@ -14,7 +14,7 @@ const GoogleTrack = () => {
          function gtag(){dataLayer.push(arguments);}
          gtag('js', new Date());
 
-         gtag('config', 'G-9F7R7RSGX9');
+         gtag('config', 'G-SD1C7FRNHK');
         `}
       </Script>
     </>

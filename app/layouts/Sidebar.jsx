@@ -8,46 +8,46 @@
 // //...................axios........................
 // import axios from 'axios';
 
-// const fetchSectionsAndSubsections = async () => {
-//   const URLDepartments = "https://api.adhyatmparivar.com/apmasterapi/department/all";
-//   const config = {
-//     headers: {
-//       'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJOYW1lIjoiZGlzcGxheW5hbWUiLCJVc2VySUQiOiI0MiIsIk1vYmlsZVBob25lIjoiNzY2NTM3NDMzMSIsIlBlcm1pc3Npb24iOiJbXSIsImV4cCI6MTczNDY3OTk4OCwiaXNzIjoiaHR0cHM6Ly90ZWNod2luZHMuaW4iLCJhdWQiOiJodHRwczovL3RlY2h3aW5kcy5pbiJ9.EhLukhe3TxZHRfiQzdQKU963_YqD2KXmNfgZHCnZuSs',
-//       'accept': 'text/plain'
-//     }
-//   };
+// // const fetchSectionsAndSubsections = async () => {
+// //   const URLDepartments = "https://api.adhyatmparivar.com/apmasterapi/department/all";
+// //   const config = {
+// //     headers: {
+// //       'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJOYW1lIjoiZGlzcGxheW5hbWUiLCJVc2VySUQiOiI0MiIsIk1vYmlsZVBob25lIjoiNzY2NTM3NDMzMSIsIlBlcm1pc3Npb24iOiJbXSIsImV4cCI6MTczNDY3OTk4OCwiaXNzIjoiaHR0cHM6Ly90ZWNod2luZHMuaW4iLCJhdWQiOiJodHRwczovL3RlY2h3aW5kcy5pbiJ9.EhLukhe3TxZHRfiQzdQKU963_YqD2KXmNfgZHCnZuSs',
+// //       'accept': 'text/plain'
+// //     }
+// //   };
 
-//   try {
-//     const departmentResponse = await axios.get(URLDepartments, config);
-//     const sections = departmentResponse.data;
+// //   try {
+// //     const departmentResponse = await axios.get(URLDepartments, config);
+// //     const sections = departmentResponse.data;
 
-//     console.log("Fetched Sections:", sections);
+// //     console.log("Fetched Sections:", sections);
 
-//     const sectionWithSubsections = await Promise.all(
-//       sections.map(async (section) => {
-//         const urlSubsection = `https://api.adhyatmparivar.com/apmasterapi/service/all?departmentId=${section.departmentID}`;
-//         // console.log(urlSubsection,"urlSubsection")
-//         try {
-//           const subsectionResponse = await axios.get(urlSubsection, config);
-//           return { 
-//             ...section, 
-//             subsections: subsectionResponse.data
-//           };
-//         } catch (error) {
-//           console.error(`Error fetching subsections for department ID ${section.id}:`, error);
-//           return { 
-//             ...section, 
-//             subsections: [] // If failed, return empty subsections
-//           };
-//         }
-//       })
-//     );
+// //     const sectionWithSubsections = await Promise.all(
+// //       sections.map(async (section) => {
+// //         const urlSubsection = `https://api.adhyatmparivar.com/apmasterapi/service/all?departmentId=${section.departmentID}`;
+// //         // console.log(urlSubsection,"urlSubsection")
+// //         try {
+// //           const subsectionResponse = await axios.get(urlSubsection, config);
+// //           return { 
+// //             ...section, 
+// //             subsections: subsectionResponse.data
+// //           };
+// //         } catch (error) {
+// //           console.error(`Error fetching subsections for department ID ${section.id}:`, error);
+// //           return { 
+// //             ...section, 
+// //             subsections: [] // If failed, return empty subsections
+// //           };
+// //         }
+// //       })
+// //     );
 
-//     console.log("Sections with Subsections:", sectionWithSubsections);
-//   } catch (error) {
-//     console.error("Error fetching sections:", error);
-//   }
-// };
+// //     console.log("Sections with Subsections:", sectionWithSubsections);
+// //   } catch (error) {
+// //     console.error("Error fetching sections:", error);
+// //   }
+// // };
 
 // // Run the function
 // // fetchSectionsAndSubsections();
@@ -57,29 +57,29 @@
 
 
 // const staticSections = [
-//   {
-//     attributes: {
-//       SectionID: 'overview',
-//       Title: 'Overview',
-//       StandAlone: true,
-//     },
-//   },
+//   // {
+//   //   attributes: {
+//   //     SectionID: 'overview',
+//   //     Title: 'Overview',
+//   //     StandAlone: true,
+//   //   },
+//   // },
   
-//   {
-//     attributes: {
-//       SectionID: 'section0',
-//       Title: 'अध्यात्म परिवार सदस्यता',
-//       StandAlone: false,
-//       episodes: {
-//         data: [
-//           { title: 'आपकी विगत', url: '/pages/membership/selfdetails',Icon: FaUser  },
-//           { title: 'परिवार की विगत', url: '/pages/membership/familydetails',Icon: FaUsers },
-//           { title: 'अध्यात्म परिवार सदस्य विगत पत्रक', url: '/pages/membership/memberdetails',Icon: FaUserFriends },
-//           { title: 'दीक्षित सदस्य की विगत', url: '/pages/membership/dikshitdetails',Icon: FaUserCheck },
-//         ],
-//       },
-//     },
-//   },
+//   // {
+//   //   attributes: {
+//   //     SectionID: 'section0',
+//   //     Title: 'अध्यात्म परिवार सदस्यता',
+//   //     StandAlone: false,
+//   //     episodes: {
+//   //       data: [
+//   //         { title: 'आपकी विगत', url: '/pages/membership/selfdetails',Icon: FaUser  },
+//   //         { title: 'परिवार की विगत', url: '/pages/membership/familydetails',Icon: FaUsers },
+//   //         { title: 'अध्यात्म परिवार सदस्य विगत पत्रक', url: '/pages/membership/memberdetails',Icon: FaUserFriends },
+//   //         { title: 'दीक्षित सदस्य की विगत', url: '/pages/membership/dikshitdetails',Icon: FaUserCheck },
+//   //       ],
+//   //     },
+//   //   },
+//   // },
 //   {
 //     attributes: {
 //       SectionID: 'section1',
@@ -87,11 +87,11 @@
 //       StandAlone: false,
 //       episodes: {
 //         data: [
-//           { title: '1.1 - जिनप्रतिमा सुरक्षा (लेप-धोप)', url: '/pages/jinmurti/1.1'},
-//           { title: '1.2 - जिनप्रतिमा निर्माण - पाषाण (अध्यात्म शिल्पशाला)', url: '/pages/jinmurti/1.2' },
-//           { title: '1.3 - जिनप्रतिमा निर्माण - धातु', url: '/pages/jinmurti/1.3' },
-//           { title: '1.4 - प्राचीन जिनप्रतिमा संग्रहण', url: '/pages/jinmurti/1.4' },
-//           { title: '1.5 - जिनप्रतिमा आशातरा निवारण (बिना अंजन वाली प्रतिमाओं की योग्य व्यवस्था)', url: '/pages/jinmurti/1.5' },
+//           { title: 'जिनप्रतिमा सुरक्षा (लेप-धोप)', url: '/pages/jinmurti/1.1'},
+//           { title: 'जिनप्रतिमा निर्माण - पाषाण (अध्यात्म शिल्पशाला)', url: '/pages/jinmurti/1.2' },
+//           { title: 'जिनप्रतिमा निर्माण - धातु', url: '/pages/jinmurti/1.3' },
+//           { title: 'प्राचीन जिनप्रतिमा संग्रहण', url: '/pages/jinmurti/1.4' },
+//           { title: 'जिनप्रतिमा आशातरा निवारण (बिना अंजन वाली प्रतिमाओं की योग्य व्यवस्था)', url: '/pages/jinmurti/1.5' },
 //         ],
 //       },
 //     },
@@ -103,11 +103,11 @@
 //       StandAlone: false,
 //       episodes: {
 //         data: [
-//           { title: '2.1 - जिनालय सुरक्षा (मरम्मत)', url: '/pages/jinmandir/2.1' },
-//           { title: '2.2 - जिनालय शुद्धि - उपाश्रय शुद्धि', url: '/pages/jinmandir/2.2' },
-//           { title: '2.3 - जिनालय नवनिर्माण तथा मार्गदर्शन', url: '/pages/jinmandir/2.3' },
-//           { title: '2.4 - जिनालय और गृहजिनालय के लिए संगमरमर के पत्थर की घड़ाई', url: '/pages/jinmandir/2.4' },
-//           { title: '2.5 - देव बगीचे का निर्माण', url: '/pages/jinmandir/2.5' },
+//           { title: 'जिनालय सुरक्षा (मरम्मत)', url: '/pages/jinmandir/2.1' },
+//           { title: 'जिनालय शुद्धि - उपाश्रय शुद्धि', url: '/pages/jinmandir/2.2' },
+//           { title: 'जिनालय नवनिर्माण तथा मार्गदर्शन', url: '/pages/jinmandir/2.3' },
+//           { title: 'जिनालय और गृहजिनालय के लिए संगमरमर के पत्थर की घड़ाई', url: '/pages/jinmandir/2.4' },
+//           { title: 'देव बगीचे का निर्माण', url: '/pages/jinmandir/2.5' },
 //         ],
 //       },
 //     },
@@ -119,11 +119,11 @@
 //       StandAlone: false,
 //       episodes: {
 //         data: [
-//           { title: '3.1 - प्राचीन श्रुत सुरक्षा', url: '/pages/jinagam/3.1' },
-//           { title: '3.2 - अर्वाचीन श्रुत प्रकाशन-प्रचार', url: '/pages/jinagam/3.2' },
-//           { title: '3.3 - हरिभद्रसूरी शास्त्रसंग्रह (श्रीसंघ को श्रुत की उपलब्धि)', url: '/pages/jinagam/3.3' },
-//           { title: '3.4 - अध्यात्म ज्ञानतीर्थ (संग्रह-संशोधन-प्रकाशन)', url: '/pages/jinagam/3.4' },
-//           { title: '3.5 - गणीपिटक निर्माण प्रसार', url: '/pages/jinagam/3.5' },
+//           { title: 'प्राचीन श्रुत सुरक्षा', url: '/pages/jinagam/3.1' },
+//           { title: 'अर्वाचीन श्रुत प्रकाशन-प्रचार', url: '/pages/jinagam/3.2' },
+//           { title: 'हरिभद्रसूरी शास्त्रसंग्रह (श्रीसंघ को श्रुत की उपलब्धि)', url: '/pages/jinagam/3.3' },
+//           { title: 'अध्यात्म ज्ञानतीर्थ (संग्रह-संशोधन-प्रकाशन)', url: '/pages/jinagam/3.4' },
+//           { title: 'गणीपिटक निर्माण प्रसार', url: '/pages/jinagam/3.5' },
 //         ],
 //       },
 //     },
@@ -135,23 +135,23 @@
 //       StandAlone: false,
 //       episodes: {
 //         data: [
-//           { title: '4.1 - परिष्ठापानिका समिति सुरक्षा मात्रु की कुंडी निर्माण स्थंडिल भूमि (डेम) निर्माण', url: '/pages/adhyatm/4.1' },
-//           { title: '4.2 - विहार सुरक्षा', url: '/pages/adhyatm/4.2' },
-//           { title: '4.3 - चारित्र उपकरण भक्ति', url: '/pages/adhyatm/4.3' },
-//           { title: '4.4 - उष्ण जल ठंडा करने का स्टैंड', url: '/pages/adhyatm/4.4' },
-//           { title: '4.5 - शुद्ध पूजा के द्रव्यों की सम्प्राप्ति', url: '/pages/adhyatm/4.5' },
-//           { title: '4.6 - धर्मानुष्ठान सुशोभन सामग्री की उपलब्धि', url: '/pages/adhyatm/4.6' },
-//           { title: '4.7 - उद्यापन उपकरण व्यवस्था', url: '/pages/adhyatm/4.7' },
-//           { title: '4.8 - अनुष्ठान आयोजन (सामूहिक दीक्षा, उपधान , वाचना श्रेणी आदि)', url: '/pages/adhyatm/4.8' },
-//           { title: '4.9 - अध्यात्मशाला (बालसंस्करण पाठशाला)', url: '/pages/adhyatm/4.9' },
-//           { title: '4.10 संस्कृत शिक्षण वर्ग (संशिव)', url: '/pages/adhyatm/4.10' },
-//           { title: '4.11 पाइयशाला (प्राकृत शिक्षणशाला)', url: '/pages/adhyatm/4.11' },
-//           { title: '4.12 जीवंत दृश्यावली (भावोत्पादक नाटक)', url: '/pages/adhyatm/4.12' },
-//           { title: '4.13 प्रभुभक्ति आदि के बेजोड़ उपकरणों का निर्माण', url: '/pages/adhyatm/4.13' },
-//           { title: '4.14 उत्तम भक्तिद्रव्य संशोधन', url: '/pages/adhyatm/4.14' },
-//           { title: '4.15 लीगल सेल : क़ानूनी मार्गदर्शन', url: '/pages/adhyatm/4.15' },
-//           { title: '4.16 चित्र निर्माण', url: '/pages/adhyatm/4.16' },
-//           { title: '4.17 विविध संघो तथा आराधना भवनों का संचालन', url: '/pages/adhyatm/4.17' },
+//           { title: 'परिष्ठापानिका समिति सुरक्षा मात्रु की कुंडी निर्माण स्थंडिल भूमि (डेम) निर्माण', url: '/pages/adhyatm/4.1' },
+//           { title: 'विहार सुरक्षा', url: '/pages/adhyatm/4.2' },
+//           { title: 'चारित्र उपकरण भक्ति', url: '/pages/adhyatm/4.3' },
+//           { title: 'उष्ण जल ठंडा करने का स्टैंड', url: '/pages/adhyatm/4.4' },
+//           { title: 'शुद्ध पूजा के द्रव्यों की सम्प्राप्ति', url: '/pages/adhyatm/4.5' },
+//           { title: 'धर्मानुष्ठान सुशोभन सामग्री की उपलब्धि', url: '/pages/adhyatm/4.6' },
+//           { title: 'उद्यापन उपकरण व्यवस्था', url: '/pages/adhyatm/4.7' },
+//           { title: 'अनुष्ठान आयोजन (सामूहिक दीक्षा, उपधान , वाचना श्रेणी आदि)', url: '/pages/adhyatm/4.8' },
+//           { title: 'अध्यात्मशाला (बालसंस्करण पाठशाला)', url: '/pages/adhyatm/4.9' },
+//           { title: 'संस्कृत शिक्षण वर्ग (संशिव)', url: '/pages/adhyatm/4.10' },
+//           { title: 'पाइयशाला (प्राकृत शिक्षणशाला)', url: '/pages/adhyatm/4.11' },
+//           { title: 'जीवंत दृश्यावली (भावोत्पादक नाटक)', url: '/pages/adhyatm/4.12' },
+//           { title: 'प्रभुभक्ति आदि के बेजोड़ उपकरणों का निर्माण', url: '/pages/adhyatm/4.13' },
+//           { title: 'उत्तम भक्तिद्रव्य संशोधन', url: '/pages/adhyatm/4.14' },
+//           { title: 'लीगल सेल : क़ानूनी मार्गदर्शन', url: '/pages/adhyatm/4.15' },
+//           { title: 'चित्र निर्माण', url: '/pages/adhyatm/4.16' },
+//           { title: 'विविध संघो तथा आराधना भवनों का संचालन', url: '/pages/adhyatm/4.17' },
 //         ],
 //       },
 //     },

@@ -47,20 +47,19 @@ const Departments = () => {
           {/* इवेंट्स के लिए */}
           <MdOutlineKeyboardDoubleArrowRight size={24} className="arrow" />
         </h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 font-Karma justify-items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-8 font-Karma justify-items-center">
           {/* Book Card */}
-          <div className="flex flex-col items-center justify-center w-full group max-w-[210px]">
+           <div className="flex flex-col items-center justify-center w-full group max-w-[210px]">
             <div className="relative w-full h-[320px]"> {/* Fixed height for portrait aspect ratio */}
               <div className="relative bg-[#F0E9D7] font-Anek overflow-hidden w-full h-full">
                 <img
                   className="h-full w-full object-cover object-center"
-                  src="/udayanmantri.JPG"
-                  alt="udayanmantri"
+                  src="/ravanni-bhitarma.jpg"
+                  alt="ravanni-bhitarma"
                 />
                 <div className="absolute inset-x-0 bottom-0 h-full bg-black/80 flex flex-col items-center justify-center translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out p-6 text-white">
                   <h3 className="text-2xl text-center font-bold mb-3">
-                    તાસકમાં મસ્તક<br />
-                    ઉદયનમંત્રી
+                    રાવણની ભીતરમાં
                   </h3>
                   <div className="space-y-2 text-sm text-center mb-4">
                     <p className="font-semibold text-golden">ઓફિસ ડીટેલ:</p>
@@ -73,47 +72,70 @@ const Departments = () => {
               </div>
             </div>
             <Link
-              href="/pages/form/udayanmantri"
+              href="/pages/form/ravanni-bhitarma"
               className="text-lg font-Teko py-2 w-full text-center bg-golden text-white font-semibold"
             >
               Register here
             </Link>
           </div>
-
+          
+         <div className="flex flex-col items-center justify-center w-full group max-w-[210px]">
+  <div className="relative w-full h-[320px]"> {/* Fixed height for portrait aspect ratio */}
+    <div className="relative bg-[#F0E9D7] font-Anek overflow-hidden w-full h-full">
+      <img
+        className="h-full w-full object-cover object-center"
+        src="/udayanmantri.JPG"
+        alt="udayanmantri"
+      />
+      <div className="absolute inset-x-0 bottom-0 h-full bg-black/80 flex flex-col items-center justify-center translate-y-0 transition-transform duration-300 ease-in-out p-6 text-gray-400">
+        <h3 className="text-2xl text-center font-bold mb-3">
+          તાસકમાં મસ્તક<br />
+          ઉદયનમંત્રી
+        </h3>
+        <div className="space-y-2 text-sm text-center mb-4">
+          <p className="font-semibold text-golden">ઓફિસ ડીટેલ:</p>
+          <p>અધ્યાત્મ ભવન</p>
+          <p>ત્રીજો માળ, આનંદ શ્રાવક આરાધના ભવન</p>
+          <p>સંજીવકુમાર ઓડિટોરીયમ પાસે, પાલ, સુરત - 395 009</p>
+          <p className="">M. 7676769600</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div className="text-lg font-Teko py-2 w-full text-center bg-golden text-white font-semibold opacity-50 cursor-not-allowed">
+    Out Of Stock
+  </div>
+  </div>
           {/* You can add more book cards with the same structure */}
-          <div className="flex flex-col items-center justify-center w-full max-w-[210px] opacity-70">
-            <div className="relative w-full h-[320px]">
-              <div className="relative font-Anek overflow-hidden w-full h-full grayscale">
-                <img
-                  className="h-full w-full object-cover object-center"
-                  src="/Mahabharat.jpg"
-                  alt="mahabharat"
-                />
-                <div className="absolute inset-0 bg-black/30"></div>
-                <div className="absolute inset-x-0 bottom-0 h-full bg-black/80 flex flex-col items-center justify-center p-6 text-white">
-                  <div className="absolute top-2 right-2 bg-red-500 text-white text-xs px-2 py-1 rounded">
-                    Closed
-                  </div>
-                  <h3 className="text-lg sm:text-2xl text-center font-bold mb-3">
-                    મહાભારત - જૈન ગ્રંથોના આલોકમાં <br />
-                  </h3>
-                  <div className="space-y-1 sm:space-y-2 text-sm text-center mb-4">
-                    <p className="font-semibold text-golden">ઓફિસ ડીટેલ:</p>
-                    <p>અધ્યાત્મ ભવન</p>
-                    <p>ત્રીજો માળ, આનંદ શ્રાવક આરાધના ભવન</p>
-                    <p>સંજીવકુમાર ઓડિટોરીયમ પાસે, પાલ, સુરત - 395 009</p>
-                    <p className="">M. 7676769600</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <button
-              disabled
-              className="text-lg font-Teko py-2 w-full text-center bg-gray-400 text-white font-semibold cursor-not-allowed"
-            >
-              Registration Closed
-            </button>
-          </div>
+          <div className="flex flex-col items-center justify-center w-full group max-w-[210px]">
+  <div className="relative w-full h-[320px]">
+    <div className="relative bg-[#F0E9D7] font-Anek overflow-hidden w-full h-full">
+      <img
+        className="h-full w-full object-cover object-center"
+        src="/Mahabharat.jpg"
+        alt="mahabharat"
+      />
+      <div className="absolute inset-x-0 bottom-0 h-full bg-black/80 flex flex-col items-center justify-center translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out p-6 text-white">
+        <h3 className="text-2xl text-center font-bold mb-3">
+          મહાભારત - જૈન ગ્રંથોના આલોકમાં <br />
+        </h3>
+        <div className="space-y-2 text-sm text-center mb-4">
+          <p className="font-semibold text-golden">ઓફિસ ડીટેલ:</p>
+          <p>અધ્યાત્મ ભવન</p>
+          <p>ત્રીજો માળ, આનંદ શ્રાવક આરાધના ભવન</p>
+          <p>સંજીવકુમાર ઓડિટોરીયમ પાસે, પાલ, સુરત - 395 009</p>
+          <p className="">M. 7676769600</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <Link
+    href="/pages/form/mahabharat"
+    className="text-lg font-Teko py-2 w-full text-center bg-golden text-white font-semibold"
+  >
+    Register here
+  </Link>
+</div>
         </div>
       </div>
     </div>

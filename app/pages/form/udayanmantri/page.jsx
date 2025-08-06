@@ -220,7 +220,7 @@ export default function UdayanmantriForm() {
   };
 
   return (
-    <div className="min-h-screen w-full py-0 md:py-8 bg-gray-100">
+    <div className="min-h-screen w-full py-0 md:py-8 bg-gray-100 flex items-center justify-center">
       {/* <div className="flex flex-col font-Anek items-center justify-center text-center p-4 mb-6">
         <span className="text-base text-gray-600 font-semibold">તાસકમાં મસ્તક</span>
         <h1 className="text-5xl font-bold text-gray-800">ઉદયનમંત્રી</h1>
@@ -416,7 +416,7 @@ export default function UdayanmantriForm() {
                   </Col>
                   <Col xs={24} md={12}>
                     <CopySelector
-                      label="આપને આ પુસ્તકની કેટલી નકલોની આવશ્યકતા છે?"
+                      label="આપને આ પુસ્તકની કેટલી નકલની આવશ્યકતા છે?"
                       value={copies}
                       onChange={setCopies}
                     />

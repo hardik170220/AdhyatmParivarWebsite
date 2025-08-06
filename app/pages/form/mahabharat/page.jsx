@@ -149,7 +149,7 @@ export default function MahabharatForm() {
   };
 
   return (
-    <div className=" sm:w-[100vw]  lg:h-[100vh] pt-4 sm:p-4  md:border   flex flex-col justify-center">
+    <div className=" sm:w-[100vw]  lg:h-[100vh] pt-4 sm:p-4 md:border flex flex-col justify-center">
       <h1 className=" text-center sm:mb-8 mb-3 font-Anek text-gray-700 text-lg sm:text-xl font-bold ">
         મહાભારત - જૈન ગ્રંથોના આલોકમાં (ભાગ ૧ થી ૫) (ગુજરાતી)
       </h1>

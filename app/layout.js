@@ -59,36 +59,7 @@ export default function RootLayout({ children }) {
           href="https://fonts.gstatic.com"
           crossOrigin="true"
         />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Kameron:wght@400;700&display=swap"
-          rel="stylesheet"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Karma:wght@300;400;500;600;700&display=swap"
-          rel="stylesheet"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Noto+Serif+Gujarati:wght@100..900&display=swap"
-          rel="stylesheet"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
-          rel="stylesheet"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Amiko:wght@400;600;700&family=Anek+Gujarati:wght@100..800&family=Noto+Sans+Gujarati:wght@100..900&family=Oswald:wght@200..700&family=Teko:wght@300..700&display=swap"
-          rel="stylesheet"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Amiko:wght@400;600;700&family=Anek+Gujarati:wght@100..800&family=Noto+Sans+Gujarati:wght@100..900&family=Teko:wght@300..700&display=swap"
-          rel="stylesheet"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Amiko:wght@400;600;700&family=Anek+Gujarati:wght@100..800&family=Noto+Sans+Gujarati:wght@100..900&display=swap"
-          rel="stylesheet"
-        />
-        <link href="https://fonts.googleapis.com/css2?family=Anek+Gujarati:wght@100..800&display=swap" rel="stylesheet"/>
-        <link href="https://fonts.googleapis.com/css2?family=Anek+Devanagari:wght@100..800&display=swap" rel="stylesheet"></link>
+       <link href="https://fonts.googleapis.com/css2?family=Anek+Devanagari:wght@100..800&family=Anek+Gujarati:wght@100..800&family=Kameron:wght@400..700&family=Karma:wght@300;400;500;600;700&family=Noto+Sans+Devanagari:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"/>
         <GoogleAnalytics/>
         <GoogleTrack/>
       </head>

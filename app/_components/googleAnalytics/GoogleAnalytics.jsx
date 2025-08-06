@@ -8,7 +8,7 @@ const GoogleAnalytics = () => {
       <>
         <Script
           async
-          src="https://www.googletagmanager.com/gtag/js?id=G-9F7R7RSGX9"
+          src="https://www.googletagmanager.com/gtag/js?id=G-SD1C7FRNHK"
         ></Script>
         <Script>{getGoogleAnalytics()}</Script>
       </>
