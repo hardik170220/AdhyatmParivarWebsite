@@ -6,17 +6,17 @@ import { FaCheckCircle } from 'react-icons/fa';
 const Success = () => {
   const router = useRouter();
   return (
-    <div className="flex items-center w-screen font-Anek justify-center min-h-screen bg-gray-50">
+    <div  className="flex items-center w-screen font-Anek justify-center min-h-screen bg-gray-50">
       <div className="relative border border-t-2 bg-white rounded-lg shadow-lg p-8 max-w-md text-center">
         {/* Icon positioned at the top center */}
         <div className="absolute -top-8 left-1/2 transform -translate-x-1/2">
           <FaCheckCircle size={80} className="text-greenish bg-white rounded-full p-1" />
         </div>
         <h2 className="text-2xl font-semibold mt-8">ધન્યવાદ !</h2>
-        <p className="text-gray-600 mt-2">તમારુ ફોર્મ અમને ખુબ જ સારી રીતે મળી ગયું છે. <br /> આભાર ! </p>
+        <p className="text-gray-600 font-semibold mt-2">તમારુ ફોર્મ અમને ખુબ જ સારી રીતે મળી ગયું છે. <br /> આભાર ! </p>
         
         {/* Gujarati text notice with styled container */}
-        <div className="mt-6 text-center p-4 bg-gray-50 rounded-lg border border-gray-200">
+        {/* <div className="mt-6 text-center p-4 bg-gray-50 rounded-lg border border-gray-200">
           <p className="text-gray-800 font-medium text-center text-base" lang="gu">
             આત્માર્થી જ્ઞાનપિપાસુ વાચકો...
           </p>
@@ -26,7 +26,7 @@ const Success = () => {
           <p className="text-gray-700 text-sm mt-2  font-medium" lang="gu">
             આપ નિશ્ચિંત રહેજો... <br />આપની પિપાસા સંતોષવી એ જ અમારો જીવનમંત્ર છે.
           </p>
-        </div>
+        </div> */}
         
         <button 
           onClick={() => router.push("/")} 

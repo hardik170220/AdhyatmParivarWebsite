@@ -12,7 +12,7 @@ const ImageCarousel = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
 
-  const images = ["/ravanni-bhitarma.jpg"];
+  const images = ["/bhagwan-mahavir.jpg","/bhagwan-mahavir-2.jpg"];
 
   useEffect(() => {
     if (!isHovered) {
@@ -56,7 +56,7 @@ const ImageCarousel = () => {
             className={`absolute w-full h-full flex items-center justify-center transition-opacity duration-500 ease-in-out
               ${currentSlide === index ? "opacity-100" : "opacity-0"}`}
           >
-            <div className="relative h-full  border-2 border-[#371A22] shadow-2xl max-h-[26rem] w-auto max-w-full overflow-hidden">
+            <div className="relative h-full  shadow-2xl max-h-[26rem] w-auto max-w-full overflow-hidden">
               <img
                 src={image}
                 alt={`Slide ${index + 1}`}
@@ -69,7 +69,7 @@ const ImageCarousel = () => {
       </div>
 
       {/* Navigation Arrows */}
-      {/* <button
+      <button
         onClick={goToPrevSlide}
         className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75 transition-all duration-200"
       >
@@ -80,21 +80,21 @@ const ImageCarousel = () => {
         className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75 transition-all duration-200"
       >
         <IoIosArrowForward />
-      </button> */}
+      </button>
 
       {/* Dots Navigation */}
-      {/* <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
         {images.map((_, index) => (
           <button
             key={index}
             onClick={() => goToSlide(index)}
             className={`w-3 h-3 rounded-full transition-all duration-200 
               ${
-                currentSlide === index ? "bg-white" : "bg-white bg-opacity-50"
+                currentSlide === index ? "bg-white" : "bg-black bg-opacity-50"
               }`}
           />
         ))}
-      </div> */}
+      </div>
     </div>
   );
 };

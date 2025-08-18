@@ -148,8 +148,8 @@ const Departments = () => {
               <div className="relative bg-[#F0E9D7] font-Anek overflow-hidden w-full h-full">
                 <img
                   className="h-full w-full object-cover object-center"
-                  src="/ravanni-bhitarma.jpg"
-                  alt="ravanni-bhitarma"
+                  src="/bhagwan-mahavir.jpg"
+                  alt="bhagwan-mahavir"
                 />
                 <div className="absolute inset-x-0 bottom-0 h-full bg-black/80 flex flex-col items-center justify-center translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out p-6 text-white">
                   <h3 className="text-2xl text-center font-bold mb-3">
